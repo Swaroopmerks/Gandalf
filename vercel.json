@@ -2,14 +2,14 @@
     "version": 2,
     "builds": [
       {
-        "src": "./CTF/CTF.py",
+        "src": "CTF.py",
         "use": "@vercel/python"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "./CTF/CTF.py"
+        "dest": "/CTF.py"
       }
     ]
   }

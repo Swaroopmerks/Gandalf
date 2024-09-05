@@ -69,7 +69,7 @@ def index():
 def serve_static(filename):
     return send_from_directory('static', filename)
 
-if __name__ == '__main__':
-    app.run()
+# if __name__ == '__main__':
+#     app.run()
 
 app = app.wsgi_app
