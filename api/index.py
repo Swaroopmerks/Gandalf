@@ -3,6 +3,7 @@ from flask_cors import CORS
 import requests
 from dotenv import load_dotenv
 import os
+import sys
 
 load_dotenv()
 
@@ -37,6 +38,12 @@ LEVEL = 1
 @app.route('/')
 def hello():
     return "Hello, World!"
+
+@app.route('/debug')
+def debug():
+    import flask
+    import werkzeug
+    return f"Flask version: {flask.__version__}, Werkzeug version: {werkzeug.__version__}"
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -81,3 +88,7 @@ def hello():
     return {"message": "Hello from Flask!"}
 
 # Remove this line if it exists: app = app.wsgi_app
+
+if __name__ == '__main__':
+    print(f"Python version: {sys.version}", file=sys.stderr)
+    app.run()
