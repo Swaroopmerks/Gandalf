@@ -2,15 +2,14 @@
     "version": 2,
     "builds": [
       {
-        "src": "api/index.py",
-        "use": "@vercel/python",
-        "config": { "buildCommand": "bash vercel-build.sh" }
+        "src": "CTF/api/index.py",
+        "use": "@vercel/python"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "api/index.py"
+        "dest": "CTF/api/index.py"
       }
     ]
   }

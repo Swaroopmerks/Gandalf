@@ -3,7 +3,7 @@ from flask_cors import CORS
 import requests
 from dotenv import load_dotenv
 import os
-import sys
+
 
 load_dotenv()
 
@@ -82,13 +82,14 @@ def index():
 def serve_static(filename):
     return send_from_directory('static', filename)
 
+application = app
 # Add a test route
-@app.route('/api/hello')
-def hello():
-    return {"message": "Hello from Flask!"}
+# @app.route('/api/hello')
+# def hello():
+#     return {"message": "Hello from Flask!"}
 
-# Remove this line if it exists: app = app.wsgi_app
+# app = app.wsgi_app
 
-if __name__ == '__main__':
-    print(f"Python version: {sys.version}", file=sys.stderr)
-    app.run()
+# if __name__ == '__main__':
+#     print(f"Python version: {sys.version}", file=sys.stderr)
+#     app.run()
