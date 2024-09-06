@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, send_from_directory
 import requests
 from dotenv import load_dotenv
 import os
@@ -31,6 +31,10 @@ defender_description = {
 }
 
 LEVEL = 1
+
+@app.route('/')
+def hello():
+    return "Hello, World!"
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
