@@ -1,12 +1,6 @@
-# My Awesome Flask Project
+# Gandalf Password Game
 
-## A step-by-step tutorial for deploying Flask apps to the live web using Vercel.
-
-### Deployed Link: [Live Demo](https://flask-app-jade.vercel.app/)
-
-### Project Walkthrough: [YouTube Tutorial](https://youtu.be/miQmOlPF_Gs)
-
-### Vercel: [Learn More About Vercel](https://vercel.com)
+## Try to guess the password to save the village! 
 
 ### Technologies Used:
 - Flask
