@@ -15,13 +15,14 @@
             background-color: rgba(0, 0, 0, 0.65); /* Add a semi-transparent black overlay */
             background-blend-mode: darken; /* Blend the overlay with the background image */
         }
-        .gandalf-green { background-color: rgba(2, 36, 1, 0.767); }
+        .gandalf-green { background-color: rgba(2, 16, 7, 0.767); }
         .gandalf-white { background-color: rgba(1, 48, 11, 0.2); color: #F0F0F0; }
         .gandalf-blue { background-color: rgba(1, 43, 12, 0.2); color: #F0F0F0; }
         .gandalf-text { color: #F0F0F0; }
+        .colo { color: rgb(193, 154, 107); }
         .gandalf-accent { background-color: rgb(193, 154, 107); }
         .gandalf-accent:hover { background-color: rgb(95, 58, 12); }
-        .password-section { background-color: rgba(2, 36, 1, 0.767); }
+        .password-section { background-color: rgba(2, 16, 7, 0.767); }
     
     </style>
 </head>
@@ -38,7 +39,7 @@
             <!-- Game Description -->
             <div class="w-full p-6 gandalf-green relative">
                 <img src="/static/ho.jpg" alt="Gandalf" class="float-right ml-4 mb-4 w-32 h-auto shadow-lg">
-                <h2 class="text-xl font-semibold mb-4 text-white">Game Description</h2>
+                <h2 class=" text-xl font-semibold mb-4 colo">What are you supposed to do ?</h2>
                 <div id="gameDescription" class="text-white">{{ description | safe }}</div>
             </div>
 
@@ -49,7 +50,7 @@
                         <div class="flex items-start mb-4">
                             <img src="/static/ganda.jpg" alt="Gandalf" class="w-12 h-12 rounded-full mr-5">
                             <div>
-                                <p class="font-bold">Gandalf:</p>
+                                <p class="font-bold colo">Gandalf:</p>
                                 <p>{{ defender_description }}</p>
                             </div>`
                         </div>
@@ -61,9 +62,9 @@
                             </div>
                         </div>
                         <div class="flex items-start mb-4">
-                            <img src="/static/you-shall-not-pass.gif" alt="Gandalf" class="w-12 h-12 rounded-full mr-5">
+                            <img src="/static/ganda.jpg" alt="Gandalf" class="w-12 h-12 rounded-full mr-5">
                             <div>
-                                <p class="font-bold">Gandalf:</p>
+                                <p class="font-bold colo">Gandalf:</p>
                                 <p>{{ gandalf_response }}</p>
                             </div>
                         </div>
