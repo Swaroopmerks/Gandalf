@@ -15,12 +15,14 @@
             background-color: rgba(0, 0, 0, 0.65); /* Add a semi-transparent black overlay */
             background-blend-mode: darken; /* Blend the overlay with the background image */
         }
-        .gandalf-gray { background-color: rgba(8, 25, 41, 0.8); }
-        .gandalf-white { background-color: rgba(10, 31, 51, 0.2); color: #F0F0F0; }
-        .gandalf-blue { background-color: rgba(1, 32, 43, 0.2); color: #F0F0F0; }
+        .gandalf-green { background-color: rgba(2, 36, 1, 0.767); }
+        .gandalf-white { background-color: rgba(1, 48, 11, 0.2); color: #F0F0F0; }
+        .gandalf-blue { background-color: rgba(1, 43, 12, 0.2); color: #F0F0F0; }
         .gandalf-text { color: #F0F0F0; }
         .gandalf-accent { background-color: rgb(193, 154, 107); }
-        .password-section { background-color: rgba(8, 40, 61, 0.9); }
+        .gandalf-accent:hover { background-color: rgb(95, 58, 12); }
+        .password-section { background-color: rgba(2, 36, 1, 0.767); }
+    
     </style>
 </head>
 <body class="bg-image min-h-screen flex flex-col">
@@ -34,9 +36,10 @@
         <!-- Main section: Game Description, Chat, and Password Submission -->
         <div class="flex-grow flex flex-col gandalf-white shadow-md overflow-hidden rounded-b-lg">
             <!-- Game Description -->
-            <div class="w-full p-6 gandalf-gray">
+            <div class="w-full p-6 gandalf-green relative">
+                <img src="/static/ho.jpg" alt="Gandalf" class="float-right ml-4 mb-4 w-32 h-auto rounded-lg shadow-lg">
                 <h2 class="text-xl font-semibold mb-4 text-white">Game Description</h2>
-                <p id="gameDescription" class="text-white">{{ description | safe }}</p>
+                <div id="gameDescription" class="text-white">{{ description | safe }}</div>
             </div>
 
             <div class="flex-grow flex flex-col md:flex-row">
@@ -68,32 +71,34 @@
                     </div>
                     <form method="post" class="mt-auto">
                         <div class="flex">
-                            <input type="text" id="message" name="message" class="flex-grow bg-gray-700 text-white border-gray-600 rounded-l-md focus:border-gray-500 focus:ring-gray-500 text-lg py-3 px-4" placeholder="Try to trick the LLM to give you password...">
-                            <button type="submit" name="send_message" class="gandalf-accent text-white px-4 py-2 rounded-r-md hover:bg-yellow-600 transition-colors">Send</button>
+                            <input type="text" id="message" name="message" class="flex-grow gandalf-green text-white border-green-900 rounded-l-md focus:border-green-900 focus:ring-green-90 text-lg py-3 px-4" placeholder="Try to trick the LLM to give you password...">
+                            <button type="submit" name="send_message" class="gandalf-accent text-white px-4 py-2 rounded-r-md transition-colors">Send</button>
                         </div>
                     </form>
                 </div>
                 
                 <!-- Right side: Password submission -->
-                <div class="w-full md:w-1/3 p-4 border-l border-gray-600 password-section">
+                <div class="w-full md:w-1/3 p-4 border-l border-green-900 password-section">
                     <h2 class="text-xl font-semibold mb-4 gandalf-text flex justify-between items-center">
                         Enter the password
                         <span class="gandalf-accent text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Level {{ level }}</span>
                     </h2>
                     <form method="post" class="space-y-4">
                         <div>
-                            <input type="text" id="password" name="password" class="w-full bg-gray-700 text-white border-gray-600 rounded-md shadow-sm focus:border-gray-500 focus:ring-gray-500 text-lg py-3 px-4" placeholder="Do you think you can guess the password?">
+                            <input type="text" id="password" name="password" class="w-full gandalf-green text-white border-green-900 rounded-md shadow-sm focus:border-green-900 focus:ring-green-900 text-lg py-3 px-4" placeholder="Did you manage to guess the password ?">
                         </div>
                         <button type="submit" name="submit_password" class="gandalf-accent text-white px-4 py-2 rounded-md w-full transition-colors">Submit Password</button>
                     </form>
                     {% if success == True %}
-                    <p class="text-green-400 font-bold mt-4">Congratulations! You guessed the password correctly.</p>
+                    <p class="text-green-900 font-bold mt-4">Congratulations! You guessed the password correctly.</p>
                     {% elif success == False %}
                     <p class="text-red-400 font-bold mt-4">Incorrect password. Please try again.</p>
                     {% endif %}
+                
                 </div>
             </div>
         </div>
     </div>
 </body>
+</html>
 </html>

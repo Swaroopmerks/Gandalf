@@ -5,6 +5,17 @@
     padding: 0px;
     box-sizing: border-box;
 }
+.float-right {
+    float: right;
+    max-width: 30%;
+}
+
+#gameDescription::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 
 body {
     font-family: 'Exo', sans-serif;
